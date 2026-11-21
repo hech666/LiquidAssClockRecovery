@@ -3,6 +3,8 @@
 packages/
 obj/
 .layout/
+artifact*/
+*.zip
 *.dSYM/
 *.deb
 layout/Library/PreferenceBundles/LiquidAssPrefs.bundle/SFAdaptiveSoftNumeric-VF.otf

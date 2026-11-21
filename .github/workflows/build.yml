@@ -17,6 +17,8 @@ jobs:
       THEOS_PACKAGE_SCHEME: roothide
     steps:
       - uses: actions/checkout@v4
+      - name: Verify public source provenance
+        run: python3 ci/verify_provenance.py
       - name: Select Xcode and host tools
         run: |
           xcode-select -p
@@ -38,6 +40,7 @@ jobs:
           test -n "$DEB"
           dpkg-deb --info "$DEB"
           dpkg-deb --contents "$DEB"
+          python3 ci/verify_package.py
       - uses: actions/upload-artifact@v4
         with:
           name: liquidass-clock-arm64e-${{ github.run_number }}
