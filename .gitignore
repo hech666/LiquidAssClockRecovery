@@ -8,3 +8,4 @@ artifact*/
 *.dSYM/
 *.deb
 layout/Library/PreferenceBundles/LiquidAssPrefs.bundle/SFAdaptiveSoftNumeric-VF.otf
+__pycache__/
