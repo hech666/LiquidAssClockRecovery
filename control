@@ -1,0 +1,10 @@
+Package: com.haoge.liquidass.clockrecovery
+Name: LiquidAss Clock Recovery
+Version: 5.2.0-1
+Architecture: iphoneos-arm64e
+Description: Time-only reconstruction build; source baseline is the public LiquidAss 0.1.1-2b clock implementation and is not feature-equivalent to LiquidAss 6.6.7.
+Maintainer: hech666
+Author: dyly-haoge (upstream reference); hech666 (recovery/build integration)
+Section: Tweaks
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 13.0)
+Conflicts: haoge.liquidass

@@ -1,0 +1,68 @@
+{
+  "repository": "https://github.com/winaviation-tweaks/liquidass",
+  "commit": "3656bb1d3f09d3e1ed7ea5132ddf04a270934ea8",
+  "upstream_version": "0.1.1-2b",
+  "license": "CC BY-NC 4.0",
+  "files": [
+    {
+      "path": "Hooks/Clock.x",
+      "bytes": 84949,
+      "git_blob_sha1": "2b53ff954d3d73a6e0a5895451fa6d9802445bef",
+      "sha256": "7a34c04ad052a55b4e3c281a15b5e742a745ee7e57254472d8d4bd666f5b1578"
+    },
+    {
+      "path": "Shared/LGGlassKit.h",
+      "bytes": 2066,
+      "git_blob_sha1": "29fa3357830320a22e89594582d0d2bc22c1dc71",
+      "sha256": "4f687dccf1591e42449bc7a52221d27c4654d62c4071084df16cf8883c23a0dc"
+    },
+    {
+      "path": "Shared/LGGlassKit.x",
+      "bytes": 11504,
+      "git_blob_sha1": "7446045ec6fd7d7d7c43196c4d2ee91260528b16",
+      "sha256": "c4428f75a0f588e684be2263bbd52a931e12594fc2c3ead673f641788a14230b"
+    },
+    {
+      "path": "Shared/LGHostRegistry.h",
+      "bytes": 7301,
+      "git_blob_sha1": "a0fed1586bb75a48796a2a33de6f1c082e532305",
+      "sha256": "1736687cdcf2b2e5193b0bf2fd28624d75547ad6878c8e10b39f3868069dd1b5"
+    },
+    {
+      "path": "Shared/LGLensRectState.h",
+      "bytes": 3195,
+      "git_blob_sha1": "636c91d4a2989bff6972fb84135e6d260651852d",
+      "sha256": "0e6b585d08113a45c34bbaca8d064dfa71c233088d0f12483bd6e1f30e0ecdb6"
+    },
+    {
+      "path": "Shared/LGLiveBackdropView.h",
+      "bytes": 1451,
+      "git_blob_sha1": "fbcef5d72e64e1386449d61b2478ae228ac4402f",
+      "sha256": "fe65cf7ea9856d70b0834ef40f62f0e4361aa0542923406b5718cd52920d45ed"
+    },
+    {
+      "path": "Shared/LGLiveBackdropView.m",
+      "bytes": 31448,
+      "git_blob_sha1": "c50be67608375c36d4187544cf863b72cc0a8ac9",
+      "sha256": "fb5246d29195560260b207c276c97b212ebe560e81fb0ecf2ed7d3c51696dda2"
+    },
+    {
+      "path": "Shared/LGCoverSheetState.h",
+      "bytes": 3523,
+      "git_blob_sha1": "93cbd6f612dbc0e38b3173262091bc7cf8edb443",
+      "sha256": "e89fdf8b2c74d0f68f115eeedbb3d043d256c2a12006698df5044819f9162b67"
+    },
+    {
+      "path": "Shared/LGSharedSupport.h",
+      "bytes": 3289,
+      "git_blob_sha1": "e52fdd86b44e93f0125a00d9c1870855d7f45d2d",
+      "sha256": "50468d5cac1bc57bc2885ea187bd63e484989f19e9ada7c5a0fb5fc9f71eeab8"
+    },
+    {
+      "path": "Shared/LGSharedSupport.m",
+      "bytes": 15991,
+      "git_blob_sha1": "0e4b6d3df428382fed10b05a34b30c1cf1b7dbb8",
+      "sha256": "3806f200b93f9e3fe076f3e0e2561abc0fa928a3241006849e03e50cf9293941"
+    }
+  ]
+}

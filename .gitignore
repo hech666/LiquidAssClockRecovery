@@ -1,0 +1,8 @@
+.theos/
+.theos-ci/
+packages/
+obj/
+.layout/
+*.dSYM/
+*.deb
+layout/Library/PreferenceBundles/LiquidAssPrefs.bundle/SFAdaptiveSoftNumeric-VF.otf

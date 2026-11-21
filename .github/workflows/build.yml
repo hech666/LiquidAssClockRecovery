@@ -1,0 +1,46 @@
+name: LiquidAss Clock Recovery Build
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-15
+    timeout-minutes: 35
+    env:
+      THEOS: ${{ github.workspace }}/.theos-ci
+      THEOS_PACKAGE_SCHEME: roothide
+    steps:
+      - uses: actions/checkout@v4
+      - name: Select Xcode and host tools
+        run: |
+          xcode-select -p
+          xcrun --find clang
+          brew install dpkg ldid
+      - name: Fetch Theos and iOS SDK
+        shell: bash
+        run: |
+          set -euo pipefail
+          git clone --depth 1 --recurse-submodules --shallow-submodules https://github.com/roothide/theos.git "$THEOS"
+          git clone --depth 1 --filter=blob:none --sparse https://github.com/theos/sdks.git "$RUNNER_TEMP/theos-sdks"
+          git -C "$RUNNER_TEMP/theos-sdks" sparse-checkout set iPhoneOS16.5.sdk
+          cp -a "$RUNNER_TEMP/theos-sdks/iPhoneOS16.5.sdk" "$THEOS/sdks/"
+      - name: Build arm64e Roothide package
+        run: |
+          set -euo pipefail
+          sh build.sh roothide
+          DEB=$(find packages -type f -name '*.deb' -print -quit)
+          test -n "$DEB"
+          dpkg-deb --info "$DEB"
+          dpkg-deb --contents "$DEB"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: liquidass-clock-arm64e-${{ github.run_number }}
+          path: packages/*.deb
+          if-no-files-found: error
+          retention-days: 30
