@@ -15,7 +15,8 @@ The filter is SpringBoard only. This avoids injecting clock hooks into unrelated
 ## Included baseline
 
 - `Hooks/Clock.x`: public older time/date hook, variable-font axis handling, mask generation, layout avoidance and animation.
-- `Shared/`: shared material renderer, preference and utility code required by that hook. `LGHostRegistry.h` retains common host definitions because the shared view implementation references those enum constants; only the Clock hook is compiled into this tweak.
+- `LiquidAssBackboardd/`: older public Backboardd renderer that consumes the shared clock glyph mask and uploads it to the Metal pipeline. The renderer is generic and still contains support code for other host types; it is an untrimmed shared dependency, not a 6.6.7 backend reconstruction.
+- `Shared/`: shared material renderer, preference and utility code required by those sources. `LGHostRegistry.h` retains common host definitions because the shared view implementation references those enum constants; only the Clock SpringBoard hook and Backboardd renderer targets are installed.
 - `LICENSE`, `NOTICES.md`, `REFERENCE.md`: upstream attribution and CC BY-NC 4.0 terms for the public reference. The reference commit is `3656bb1d3f09d3e1ed7ea5132ddf04a270934ea8` (`winaviation-tweaks/liquidass`, public 0.1.1-2b source).
 
 The settings UI, modern replacement-time/editor classes, exact 6.6.7 hooks, and complete clock rendering/backend integration remain under reconstruction. The font file is intentionally omitted from this public repo because its redistribution license has not been established; the old clock source falls back if the optional font is absent. Add a legally redistributable font at `layout/Library/PreferenceBundles/LiquidAssPrefs.bundle/SFAdaptiveSoftNumeric-VF.otf` only after confirming rights.
