@@ -1,6 +1,6 @@
 # LiquidAss Clock Recovery
 
-**Status: cloud-buildable baseline plus a syntax-checked 6.6.7 class recovery; not yet a 6.6.7-equivalent restoration.** The installable time-only tweak is based on public LiquidAss 0.1.1-2b. `Recovered/Current667/LGClockReplacementTimeView.m` is a separate current-binary-derived source module that CI syntax-checks for arm64 and arm64e, but it is not yet linked into the installable tweak because its current-binary creation/render call path is still being reconstructed. This is an ongoing source recovery, not a feature-equivalence claim. Do not install the baseline package over a production setup yet.
+**Status: cloud-buildable legacy baseline plus five arm64/arm64e-compiled 6.6.7 recovery modules; not yet a 6.6.7-equivalent restoration.** The installable time-only tweak is based on public LiquidAss 0.1.1-2b. `Recovered/Current667/` holds six current-binary-derived source modules which Actions compiles to standalone objects for arm64 and arm64e, but they are not linked into the installable tweak: the current-binary host worker, shared glass implementation, and runtime path resolver remain incomplete. This is an ongoing source recovery, not a feature-equivalence claim. Do not install the baseline package over a production setup yet.
 
 ## Build
 
@@ -19,7 +19,7 @@ The filter is SpringBoard only. This avoids injecting clock hooks into unrelated
 - `Shared/`: shared material renderer, preference and utility code required by those sources. `LGHostRegistry.h` retains common host definitions because the shared view implementation references those enum constants; only the Clock SpringBoard hook and Backboardd renderer targets are installed.
 - `LICENSE`, `NOTICES.md`, `REFERENCE.md`: upstream attribution and CC BY-NC 4.0 terms for the public reference. The reference commit is `3656bb1d3f09d3e1ed7ea5132ddf04a270934ea8` (`winaviation-tweaks/liquidass`, public 0.1.1-2b source).
 
-The settings UI, modern replacement-time/editor classes, exact 6.6.7 hooks, and complete clock rendering/backend integration remain under reconstruction. The font file is intentionally omitted from this public repo because its redistribution license has not been established; the old clock source falls back if the optional font is absent. Add a legally redistributable font at `layout/Library/PreferenceBundles/LiquidAssPrefs.bundle/SFAdaptiveSoftNumeric-VF.otf` only after confirming rights.
+The current-binary replacement view, glass/field publisher, shared Blur/Vibrance view, progress animation and a small settings/field-mapping subset are partially reconstructed and compile as isolated objects. The full host lifecycle, editor implementation, exact 6.6.7 shared renderer integration, and complete preference UI remain under reconstruction. The 6.6.7 variable font asset is omitted from this public repo because its redistribution license is unverified; the old clock source falls back if the optional font is absent.
 
 ## Recovery materials
 

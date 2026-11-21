@@ -38,7 +38,10 @@ jobs:
           set -euo pipefail
           SDK="$THEOS/sdks/iPhoneOS16.5.sdk"
           for ARCH in arm64 arm64e; do
-            xcrun --sdk iphoneos clang -target "${ARCH}-apple-ios15.0" -isysroot "$SDK" -fobjc-arc -Wall -Wextra -Werror -c Recovered/Current667/LGClockReplacementTimeView.m -o "$RUNNER_TEMP/LGClockReplacementTimeView-${ARCH}.o"
+            for SOURCE in Recovered/Current667/LGClockReplacementTimeView.m Recovered/Current667/LGClockGlassView.m Recovered/Current667/LGClockSharedViews.m Recovered/Current667/LGClockFieldMapping.m Recovered/Current667/LGClockProgressRecovery.m Recovered/Current667/LGClockSettings.m; do
+              MODULE=$(basename "${SOURCE%.m}")
+              xcrun --sdk iphoneos clang -target "${ARCH}-apple-ios15.0" -isysroot "$SDK" -fobjc-arc -Wall -Wextra -Werror -c "$SOURCE" -o "$RUNNER_TEMP/${MODULE}-${ARCH}.o"
+            done
           done
       - name: Build arm64e Roothide package
         run: |
