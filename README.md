@@ -1,6 +1,6 @@
 # LiquidAss Clock Recovery
 
-**Status: first cloud-buildable baseline; not yet a 6.6.7-equivalent restoration.** This repository currently compiles a time-only tweak based on the public LiquidAss 0.1.1-2b clock implementation. It is a bootstrap for the ongoing recovery, not a claim that the newer LGClockReplacementTimeView/editor implementation has been fully reconstructed. Do not install this smoke-test package over a production setup yet.
+**Status: cloud-buildable baseline plus a syntax-checked 6.6.7 class recovery; not yet a 6.6.7-equivalent restoration.** The installable time-only tweak is based on public LiquidAss 0.1.1-2b. `Recovered/Current667/LGClockReplacementTimeView.m` is a separate current-binary-derived source module that CI syntax-checks for arm64 and arm64e, but it is not yet linked into the installable tweak because its current-binary creation/render call path is still being reconstructed. This is an ongoing source recovery, not a feature-equivalence claim. Do not install the baseline package over a production setup yet.
 
 ## Build
 

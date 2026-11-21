@@ -32,6 +32,16 @@ jobs:
           git clone --depth 1 --filter=blob:none --sparse https://github.com/theos/sdks.git "$RUNNER_TEMP/theos-sdks"
           git -C "$RUNNER_TEMP/theos-sdks" sparse-checkout set iPhoneOS16.5.sdk
           cp -a "$RUNNER_TEMP/theos-sdks/iPhoneOS16.5.sdk" "$THEOS/sdks/"
+      - name: Syntax-check current 6.6.7 recovered modules
+        shell: bash
+        run: |
+          set -euo pipefail
+          SDK="$THEOS/sdks/iPhoneOS16.5.sdk"
+          for ARCH in arm64 arm64e; do
+            xcrun --sdk iphoneos clang -target "${ARCH}-apple-ios15.0" -isysroot "$SDK" \\
+              -fobjc-arc -Wall -Wextra -Werror -fsyntax-only \\
+              Recovered/Current667/LGClockReplacementTimeView.m
+          done
       - name: Build arm64e Roothide package
         run: |
           set -euo pipefail
